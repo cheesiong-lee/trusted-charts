@@ -1,6 +1,0 @@
-Test of Trident Helm chart, by jhopper
-
-You must use an experimental build of Trident to use CVS for AWS,
-registry.barnacle.netapp.com:5000/trident:18.10.0-test.4e1b92c542a3aad76dbf23570beded86e988010a
-
-You must manually load this into the docker of the worker node that Trident is running on

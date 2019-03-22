@@ -1,5 +1,0 @@
-apiVersion: v1
-appVersion: "0.1.7"
-description: A Helm chart for NetApp CSI driver for Cloud Volumes on AKS
-name: anf-csi-aks-driver
-version: 0.1.7

@@ -1,5 +1,0 @@
-apiVersion: v1
-appVersion: "0.2.7"
-description: A Helm chart for NetApp CSI driver for Cloud Volumes on Azure
-name: anf-csi-driver
-version: 0.2.7
