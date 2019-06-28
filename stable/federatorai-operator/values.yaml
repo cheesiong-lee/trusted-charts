@@ -14,6 +14,6 @@ image:
 alameda:
   version: v4.1.39
   ## NKS trusted-helm prometheus exposes as http://pk8s.monitoring:9090
-  prometheusservice: http://pk8s.monitoring:9090
+  prometheusService: http://pk8s.monitoring:9090
   ## OpenShift prometheus exposes as https://prometheus-k8s.openshift-monitoring:9091
   # https://prometheus-k8s.openshift-monitoring:9091

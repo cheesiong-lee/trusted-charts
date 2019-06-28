@@ -8,10 +8,11 @@ metadata:
     "helm.sh/hook-delete-policy": before-hook-creation
     "helm.sh/hook-weight": "50"
 spec:
-  enableexecution: true
-  enablegui: true
+  enableExecution: true
+  enableGui: true
+  enableFedemeter: true
   version: {{ .Values.alameda.version }}
-  prometheusservice: {{ .Values.alameda.prometheusservice }}
+  prometheusService: {{ .Values.alameda.prometheusService }}
   storages:
     - usage: log
       type: ephemeral
