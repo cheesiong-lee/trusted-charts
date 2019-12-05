@@ -33,22 +33,22 @@ spec:
           args:
             - --path.procfs=/host/proc
             - --path.sysfs=/host/sys
-            - --web.listen-address=0.0.0.0:{{ .Values.service.port }}
+            - --web.listen-address=0.0.0.0:{{ .Values.service.pdsTargetPort }}
 {{- if .Values.extraArgs }}
 {{ toYaml .Values.extraArgs | indent 12 }}
 {{- end }}
           ports:
             - name: metrics
-              containerPort: {{ .Values.service.targetPort }}
+              containerPort: {{ .Values.service.pdsTargetPort }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: {{ .Values.service.port }}
+              port: {{ .Values.service.pdsTargetPort }}
           readinessProbe:
             httpGet:
               path: /
-              port: {{ .Values.service.port }}
+              port: {{ .Values.service.pdsTargetPort }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:

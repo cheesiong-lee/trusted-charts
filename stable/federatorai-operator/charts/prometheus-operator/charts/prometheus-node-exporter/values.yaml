@@ -9,7 +9,7 @@ image:
 service:
   type: ClusterIP
   port: 9100
-  targetPort: 9100
+  pdsTargetPort: 9101
   nodePort:
   annotations:
     prometheus.io/scrape: "true"

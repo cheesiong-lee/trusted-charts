@@ -15,7 +15,7 @@ image:
 alameda:
   version: stable
   ## NKS trusted-helm prometheus exposes as http://pk8s.monitoring.svc:9090
-  prometheusService: http://pk8s.monitoring.svc:9090
+  # prometheusService: http://pk8s.monitoring.svc:9090
   ## OpenShift prometheus exposes as https://prometheus-k8s.openshift-monitoring.svc:9091
   # prometheusService: https://prometheus-k8s.openshift-monitoring:9091
   ## K8S  prometheus exposes as http://monitoring-prometheus-oper-prometheus.<namespace>.svc:9090
@@ -23,9 +23,10 @@ alameda:
 
 prometheus:
   ## Deploy built-in prometheus chart
+  ## if this value is false, you need to specify the above alameda.prometheusService value
   enabled: true
 
 grafana:
-  ## Specify the nodePort value between 30000-32767 for the Grafana
+  ## Specify the nodePort value between 30000-32767 for the Grafana Server
   ## Comment out the following line to disable nodePort service
   nodePort: 31010
