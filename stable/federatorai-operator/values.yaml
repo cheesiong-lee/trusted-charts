@@ -30,3 +30,8 @@ grafana:
   ## Specify the nodePort value between 30000-32767 for the Grafana Server
   ## Comment out the following line to disable nodePort service
   nodePort: 31010
+
+federatorai_rest:
+  ## Specify the nodePort value between 30000-32767 for the Federator.ai RESTful API Server
+  ## Comment out the following line to disable nodePort service
+  nodePort: 31011

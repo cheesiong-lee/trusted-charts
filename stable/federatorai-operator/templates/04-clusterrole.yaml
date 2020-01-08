@@ -18,6 +18,7 @@ rules:
   - "*"
 - apiGroups:
   - autoscaling.containers.ai
+  - analysis.containers.ai
   resources:
   - "*"
   verbs:
@@ -30,7 +31,6 @@ rules:
   - get
   - list
   - watch
-  - update
 - apiGroups:
   - ""
   resources:
@@ -52,7 +52,6 @@ rules:
   - get
   - list
   - watch
-  - create
   - delete
   - patch
 - apiGroups:
@@ -61,7 +60,6 @@ rules:
   resources:
   - replicationcontrollers
   - ingresses
-  - ingresses/finalizers
   verbs:
   - "*"
 - apiGroups:
@@ -78,9 +76,7 @@ rules:
   - secrets
   verbs:
   - delete #[issue 150]for openshift v3.09
-  - update
   - create
-  - get
   - list
   - watch
 - apiGroups:
@@ -94,7 +90,6 @@ rules:
   - update
   - watch
   - get
-  - patch
 - apiGroups:
   - ""
   resources:
@@ -109,6 +104,7 @@ rules:
   - rbac.authorization.k8s.io
   resources:
   - clusterroles
+  - clusterroles/finalizers
   - clusterrolebindings
   - roles
   - rolebindings
@@ -141,8 +137,6 @@ rules:
   - create
   - delete
   - get
-  - list
-  - watch
   - update
 - apiGroups:
   - admissionregistration.k8s.io
@@ -219,12 +213,14 @@ rules:
   - watch
 - apiGroups:
   - extensions
+  - policy
   resources:
   - podsecuritypolicies
   verbs:
   - "*"
 - apiGroups:
   - extensions
+  - policy
   resourceNames:
   - federatorai-alameda-weave-scope
   resources:
@@ -256,12 +252,9 @@ rules:
   - "*"
   verbs:
   - "*"
-- apiGroups:
-  - ""
-  resources:
-  - events
-  verbs:
-  - get
-  - create
-  - update
-  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: alameda-gc
+rules: []
